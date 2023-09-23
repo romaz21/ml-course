@@ -20,8 +20,8 @@ class LaplaceDistribution:
         '''
         ####
         # Do not change the class outside of this block
-        self.loc = # YOUR CODE HERE
-        self.scale = # YOUR CODE HERE
+        self.loc = np.median(features, axis = 0)# YOUR CODE HERE
+        self.scale = sum([abs(i - self.loc) for i in features])/len(features) # YOUR CODE HERE
         ####
 
 
@@ -33,7 +33,7 @@ class LaplaceDistribution:
         '''
         ####
         # Do not change the class outside of this block
-        return 
+        return np.log(np.exp(-abs(values - self.loc)/self.scale)/(2*self.scale))
         ####
         
     
