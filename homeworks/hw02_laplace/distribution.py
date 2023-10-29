@@ -1,6 +1,7 @@
 import numpy as np
 
-class LaplaceDistribution:    
+
+class LaplaceDistribution:
     @staticmethod
     def mean_abs_deviation_from_median(x: np.ndarray):
         '''
@@ -20,10 +21,9 @@ class LaplaceDistribution:
         '''
         ####
         # Do not change the class outside of this block
-        self.loc = np.median(features, axis = 0)# YOUR CODE HERE
-        self.scale = sum([abs(i - self.loc) for i in features])/len(features) # YOUR CODE HERE
+        self.loc = np.median(features, axis=0)  # YOUR CODE HERE
+        self.scale = sum([abs(i - self.loc) for i in features]) / len(features)  # YOUR CODE HERE
         ####
-
 
     def logpdf(self, values):
         '''
@@ -33,10 +33,9 @@ class LaplaceDistribution:
         '''
         ####
         # Do not change the class outside of this block
-        return np.log(np.exp(-abs(values - self.loc)/self.scale)/(2*self.scale))
+        return np.log(np.exp(-abs(values - self.loc) / self.scale) / (2 * self.scale))
         ####
-        
-    
+
     def pdf(self, values):
         '''
         Returns probability density at every input value.
